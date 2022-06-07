@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,9 +11,8 @@ import { SpecialtiesService } from './services/specialties.service';
 import { FacultiesComponent } from './components/faculties/faculties.component';
 import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SubjectsComponent } from './subjects/subjects/subjects.component';
 import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
-
+import { SubjectsComponent } from './components/subjects/subjects.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +23,15 @@ import { NewSubjectComponent } from './components/subjects/new-subject/new-subje
     NewFacultyComponent,
     HomePageComponent,
     SubjectsComponent,
-    NewSubjectComponent
+    NewSubjectComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, MaterialModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [SpecialtiesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
