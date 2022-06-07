@@ -1,14 +1,18 @@
 <app-header></app-header>
 
+<div style="display: flex">
+  <h2>Subjects</h2>
+  <button>+ New subject</button>
+</div>
 
-<!-- 
-  <mat-form-field appearance="standard">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-</mat-form-field> -->
+<input matInput placeholder="Search" />
 
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
+<div class="mat-elevation-z8" [hidden]="!dataSource">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    >
     <!-- ID Column -->
     <ng-container matColumnDef="subject_id">
       <th
@@ -46,6 +50,17 @@
         Description
       </th>
       <td mat-cell *matCellDef="let row">{{ row.subject_description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+      >
+        Action
+      </th>
+      <td mat-cell *matCellDef="let row">{{ row.action }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
