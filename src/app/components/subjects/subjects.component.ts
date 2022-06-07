@@ -13,7 +13,7 @@ export class SubjectsComponent implements OnInit {
   constructor(private subjectsService: SubjectsService) { }
 
   ngOnInit(): void {
-    // this.subjectsService.getSubjects();      
+    this.subjectsService.getSubjects().subscribe((subjects) => this.subjects = subjects)      
   }
 
 }
