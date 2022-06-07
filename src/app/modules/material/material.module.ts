@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { MatListModule } from "@angular/material/list";
+import {NgModule} from '@angular/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [],
@@ -22,4 +24,5 @@ import {MatTableModule} from '@angular/material/table';
     MatTableModule,
   ],
 })
-export class MaterialModule { }
+export class MaterialModule {
+}
