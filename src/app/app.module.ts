@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,20 +10,32 @@ import { NewSpecialtieComponent } from './components/specialties/new-specialtie/
 import { SpecialtiesService } from './services/specialties.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDeleteComponent } from './components/specialties/confirm-delete/confirm-delete.component';
+import { FacultiesComponent } from './components/faculties/faculties.component';
+import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
+import { HeaderComponent } from './components/header/header.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SpecialtiesComponent,
-    NewSpecialtieComponent,
+    NewSpecialtieComponent,FacultiesComponent,
+    NewFacultyComponent,
+    HomePageComponent,
+    SubjectsComponent,
+    NewSubjectComponent,
+    HeaderComponent,
     ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule
-  ],
+    AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
+    
   providers: [SpecialtiesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
