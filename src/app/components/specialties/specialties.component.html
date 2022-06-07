@@ -1,1 +1,53 @@
-<p>specialties works!</p>
+<section c>
+  <mat-toolbar lass="header-toolbar">
+    <h3 class="title">Specialties</h3>
+    <button mat-stroked-button>
+      <mat-icon aria-hidden="false" aria-label="add new specialties icon"
+        >add</mat-icon
+      >
+      Add a new specialty
+    </button>
+  </mat-toolbar>
+</section>
+<main>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="speciality_code">
+      <th mat-header-cell *matHeaderCellDef>Specialty code</th>
+      <td mat-cell *matCellDef="let specialties">
+        {{ specialties.speciality_code }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="speciality_name">
+      <th mat-header-cell *matHeaderCellDef>Specialty</th>
+      <td mat-cell *matCellDef="let specialties">
+        {{ specialties.speciality_name }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="icons">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let specialties">
+        <mat-icon aria-hidden="false" aria-label="edit specialty icon"
+          >edit</mat-icon
+        >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="delete specialty icon"
+          (click)="openDialog()"
+          >delete</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    #paginator
+    [showFirstLastButtons]="true"
+    [length]="paginatorLength"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 25, 50]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</main>
