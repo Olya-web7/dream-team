@@ -1,0 +1,19 @@
+.mat-toolbar-row, .mat-toolbar-single-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+
+    h3 {
+        font-weight: bold;
+    }
+}
+
+table.mat-table {
+    width: 100%;
+}
+
+.mat-icon {
+    cursor: pointer;
+}
+
+
