@@ -11,6 +11,8 @@ import { SpecialtiesService } from './services/specialties.service';
 import { FacultiesComponent } from './components/faculties/faculties.component';
 import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HeaderComponent } from './components/header/header.component';
     FacultiesComponent,
     NewFacultyComponent,
     HomePageComponent,
-    HeaderComponent
+    HeaderComponent,
+    SubjectsComponent,
+    NewSubjectComponent
   ],
   imports: [
     BrowserModule,
