@@ -14,6 +14,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomePageComponent,
     SubjectsComponent,
     NewSubjectComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [SpecialtiesService],
   bootstrap: [AppComponent],
