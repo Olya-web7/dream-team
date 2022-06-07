@@ -1,5 +1,5 @@
 export interface SubjectModel {
-  id: string,
-  name: string,
-  description: string,
+  subject_id: string,
+  subject_name: string,
+  subject_description: string,
 }
