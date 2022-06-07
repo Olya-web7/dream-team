@@ -11,7 +11,8 @@ import { SpecialtiesService } from './services/specialties.service';
 import { FacultiesComponent } from './components/faculties/faculties.component';
 import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
+import { SubjectsComponent } from './components/subjects/subjects.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderComponent } from './components/header/header.component';
     FacultiesComponent,
     NewFacultyComponent,
     HomePageComponent,
-    HeaderComponent
+    SubjectsComponent,
+    NewSubjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,6 @@ import { HeaderComponent } from './components/header/header.component';
     MaterialModule,
   ],
   providers: [SpecialtiesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
