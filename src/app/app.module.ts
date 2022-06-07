@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewFacultyComponent,
     HomePageComponent,
     SubjectsComponent,
-    NewSubjectComponent
+    NewSubjectComponent,
   ],
   imports: [
     BrowserModule,
