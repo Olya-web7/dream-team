@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,6 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class SubjectsService {
 
-  constructor() { }
-  //https://dtapi.if.ua/Subject/getRecords
+  constructor(private http: HttpClient) { }
+
+  getSubjects() {
+    return this.http.get('/dtapi.if.ua/Subject/getRecords/');
+  }
 }

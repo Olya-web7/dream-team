@@ -13,6 +13,7 @@ import { NewFacultyComponent } from './components/faculties/new-faculty/new-facu
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SubjectsComponent } from './components/subjects/subjects.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, MaterialModule
+    AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule,
   ],
   providers: [SpecialtiesService],
   bootstrap: [AppComponent]
