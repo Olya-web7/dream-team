@@ -1,0 +1,26 @@
+mat-toolbar {
+  background-color: #7d3fb5;
+  color: #fff;
+
+  mat-toolbar-row {
+    display: flex;
+    justify-content: space-around;
+
+    mat-list {
+      display: flex;
+      gap: 15px;
+      padding-top: 0;
+
+      mat-list-item {
+        a {
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}

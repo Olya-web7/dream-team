@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +11,7 @@ import { SpecialtiesService } from './services/specialties.service';
 import { FacultiesComponent } from './components/faculties/faculties.component';
 import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,14 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     NewSpecialtieComponent,
     FacultiesComponent,
     NewFacultyComponent,
-    HomePageComponent
+    HomePageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, BrowserAnimationsModule, MaterialModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [SpecialtiesService],
   bootstrap: [AppComponent]
