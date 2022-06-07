@@ -25,7 +25,7 @@ import { HeaderComponent } from './components/header/header.component';
     HomePageComponent,
     HeaderComponent,
     SubjectsComponent,
-    NewSubjectComponent
+    NewSubjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,6 @@ import { HeaderComponent } from './components/header/header.component';
     MaterialModule,
   ],
   providers: [SpecialtiesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
