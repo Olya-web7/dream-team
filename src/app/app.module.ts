@@ -13,7 +13,6 @@ import { NewFacultyComponent } from './components/faculties/new-faculty/new-facu
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
-import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { HeaderComponent } from './components/header/header.component';
     FacultiesComponent,
     NewFacultyComponent,
     HomePageComponent,
-    HeaderComponent,
     SubjectsComponent,
     NewSubjectComponent,
   ],
