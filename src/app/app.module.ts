@@ -8,13 +8,19 @@ import { SpecialtiesComponent } from './components/specialties/specialties.compo
 import { MaterialModule } from './modules/material/material.module';
 import { NewSpecialtieComponent } from './components/specialties/new-specialtie/new-specialtie.component';
 import { SpecialtiesService } from './services/specialties.service';
+import { FacultiesComponent } from './components/faculties/faculties.component';
+import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SpecialtiesComponent,
-    NewSpecialtieComponent
+    NewSpecialtieComponent,
+    FacultiesComponent,
+    NewFacultyComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
