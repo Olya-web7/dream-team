@@ -14,3 +14,11 @@ td, th {
 .mat-elevation-z8 {
   margin: 10px;
 }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  padding: 1em 0;
+}
