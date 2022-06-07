@@ -10,6 +10,6 @@ export class SubjectsService {
   constructor(private http: HttpClient) { }
 
   getSubjects() {
-    return this.http.get<Subject[]>('/dtapi.if.ua/Subject/getRecords/');
+    return this.http.get('/dtapi.if.ua/Subject/getRecords/');
   }
 }
