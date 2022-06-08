@@ -28,14 +28,14 @@ import { HeaderComponent } from './components/header/header.component';
     SubjectsComponent,
     NewSubjectComponent,
     HeaderComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [SpecialtiesService],
   bootstrap: [AppComponent],
