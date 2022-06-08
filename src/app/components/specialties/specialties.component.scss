@@ -14,6 +14,16 @@ table.mat-table {
 
 .mat-icon {
     cursor: pointer;
+    
+    &:hover.delete-icon {
+        color: red;
+    }
+
+    &:hover.edit-icon {
+        color: orange;
+    }
 }
+
+
 
 
