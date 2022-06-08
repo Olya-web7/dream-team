@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     NewSubjectComponent,
     HeaderComponent,
     ConfirmDeleteComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

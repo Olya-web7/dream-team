@@ -1,0 +1,43 @@
+.cards_container {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.mat-card {
+  margin: 20px;
+  width: 20em;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 20px;
+}
+
+.mat-icon {
+  font-size: 80px;
+  height: 40px;
+  width: 82px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.dashboard_count {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count {
+  font-size: 24px;
+  text-align: center;
+  margin-left: 90px;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
