@@ -16,6 +16,8 @@ import { NewSubjectComponent } from './components/subjects/new-subject/new-subje
 import { SubjectsComponent } from './components/subjects/subjects.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +30,21 @@ import { HeaderComponent } from './components/header/header.component';
     SubjectsComponent,
     NewSubjectComponent,
     HeaderComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    BreadcrumbModule
   ],
-  providers: [SpecialtiesService],
+  providers: [
+    SpecialtiesService, 
+    BreadcrumbService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
