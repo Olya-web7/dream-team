@@ -7,10 +7,6 @@ table {
   width: 100%;
 }
 
-td, th {
-  width: 25%;
-}
-
 .mat-elevation-z8 {
   margin: 10px;
 }
@@ -26,4 +22,8 @@ td, th {
 h2 {
   font-family: Roboto,"Helvetica Neue",sans-serif;
   margin-left: 1em;
+}
+
+mat-icon {
+  cursor: pointer;
 }

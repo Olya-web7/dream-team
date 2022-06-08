@@ -17,9 +17,10 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
   dataSource!: MatTableDataSource<SubjectModel>;
   subjects!: SubjectModel[];
   destroy$: Subject<boolean> = new Subject<boolean>();
-  
+  resultsLength = 0;
+
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private subjectsService: SubjectsService, private _liveAnnouncer: LiveAnnouncer) {
     this.dataSource = new MatTableDataSource(this.subjects);
@@ -36,7 +37,6 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
         this.dataSource = new MatTableDataSource(subjects);
         this.subjects = subjects;
       });
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
