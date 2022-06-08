@@ -36,7 +36,6 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
         this.dataSource = new MatTableDataSource(subjects);
         this.subjects = subjects;
       });
-    // this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
