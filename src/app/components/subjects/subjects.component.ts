@@ -52,13 +52,8 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
     this.dataSource.paginator = this.paginator;
   }
 
-  /** Announce the change in sort state for assistive technology. */
-  announceSortChange(sortState: Sort): void {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
+  deleteSubject(subject_id: string) {
+    this.subjectsService.deleteSubject(subject_id);
   }
 
   ngOnDestroy(): void {
