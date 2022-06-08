@@ -1,4 +1,5 @@
-<section c>
+<app-header></app-header>
+<section>
   <mat-toolbar lass="header-toolbar">
     <h3 class="title">Specialties</h3>
     <button mat-stroked-button>
@@ -26,13 +27,19 @@
     <ng-container matColumnDef="icons">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let specialties">
-        <mat-icon aria-hidden="false" aria-label="edit specialty icon"
+        <mat-icon
+          class="edit-icon"
+          aria-hidden="false"
+          aria-label="edit specialty icon"
           >edit</mat-icon
         >
         <mat-icon
+          class="delete-icon"
           aria-hidden="false"
           aria-label="delete specialty icon"
-          (click)="openDialog()"
+          (click)="
+            openDialog(specialties.speciality_id, specialties.speciality_name)
+          "
           >delete</mat-icon
         >
       </td>
