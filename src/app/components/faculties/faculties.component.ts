@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FacultiesService} from "../../services/faculties.service";
-import {MatTableDataSource} from "@angular/material/table";
-import {Faculties} from "../../interfaces/faculties.model";
+import { Component, OnInit } from '@angular/core';
+import { FacultiesService } from "../../services/faculties.service";
+import { MatTableDataSource } from "@angular/material/table";
+import { Faculties } from "../../interfaces/faculties.model";
 
 @Component({
   selector: 'app-faculties',
