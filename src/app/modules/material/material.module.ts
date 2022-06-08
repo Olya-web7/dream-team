@@ -6,8 +6,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
-// import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -18,7 +18,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
-    MatPaginatorModule,
+    MatPaginatorModule,MatDialogModule
   ],
   exports: [
     MatToolbarModule,
@@ -27,7 +27,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
-    MatPaginatorModule,
+    MatPaginatorModule,MatDialogModule
   ],
 })
 export class MaterialModule {}
