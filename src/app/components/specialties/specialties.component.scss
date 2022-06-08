@@ -1,0 +1,32 @@
+.mat-toolbar-row, .mat-toolbar-single-row{
+
+    background-color: transparent;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+
+    h2 {
+        font-weight: bold;
+    }
+}
+
+table.mat-table {
+    width: 100%;
+}
+
+.mat-icon {
+    cursor: pointer;
+    
+    &:hover.delete-icon {
+        color: red;
+    }
+
+    &:hover.edit-icon {
+        color: orange;
+    }
+}
+
+
+
+

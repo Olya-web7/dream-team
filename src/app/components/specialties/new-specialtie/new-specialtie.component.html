@@ -1,1 +1,53 @@
-<p>nform for adding new specialtie</p>
+<main class="main">
+  <h1 mat-dialog-title>Add a new specialty</h1>
+  <form [formGroup]="newSpecialtyForm" (ngSubmit)="onSubmit()">
+    <mat-form-field [style.width.%]="100">
+      <mat-label>Specialty code</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        id="codeInput"
+        name="codeInput"
+        formControlName="codeInput"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        !newSpecialtyForm?.get('codeInput')?.valid &&
+        newSpecialtyForm?.get('codeInput')?.touched
+      "
+    >
+      {{ getErrors() }}
+    </mat-error>
+    <br />
+    <mat-form-field [style.width.%]="100">
+      <mat-label>Specialty name</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        id="nameInput"
+        name="nameInput"
+        formControlName="nameInput"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        !newSpecialtyForm?.get('nameInput')?.valid &&
+        newSpecialtyForm?.get('nameInput')?.touched
+      "
+      >This field is required</mat-error
+    >
+    <div class="button-container">
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!newSpecialtyForm.valid"
+      >
+        Confirm
+      </button>
+      <button mat-raised-button (click)="cancel()" type="button">Cancel</button>
+    </div>
+  </form>
+</main>

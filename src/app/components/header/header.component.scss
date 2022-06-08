@@ -1,0 +1,36 @@
+mat-toolbar {
+  background-color: #7d3fb5;
+  color: #fff;
+
+  mat-toolbar-row {
+    display: flex;
+    justify-content: space-around;
+
+    .logo {
+      cursor: pointer;
+    }
+
+    mat-list {
+      display: flex;
+      gap: 15px;
+      padding-top: 0;
+
+      mat-list-item {
+        opacity: .8;
+
+        &.active {
+          opacity: 1;
+        }
+
+        a {
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}
