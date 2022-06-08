@@ -1,7 +1,7 @@
 <section>
-  <mat-toolbar lass="header-toolbar">
+  <mat-toolbar class="header-toolbar">
     <h3 class="title">Specialties</h3>
-    <button mat-stroked-button>
+    <button mat-raised-button>
       <mat-icon aria-hidden="false" aria-label="add new specialties icon"
         >add</mat-icon
       >
@@ -9,7 +9,7 @@
     </button>
   </mat-toolbar>
 </section>
-<main>
+<main class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="speciality_code">
       <th mat-header-cell *matHeaderCellDef>Specialty code</th>
