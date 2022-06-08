@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { SubjectsService } from 'src/app/services/subjects.service';
-import { SubjectModel } from './subject.model';
+import { SubjectModel } from '../../interfaces/subject.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
