@@ -1,14 +1,15 @@
 <main class="main">
   <h1 mat-dialog-title>Confirmation</h1>
   <div mat-dialog-content>
-    <mat-icon aria-label="confirm delete specialty icon"
+    <mat-icon class="high-priority" aria-label="confirm delete specialty icon"
       >priority_high</mat-icon
     >
-    Confirm the delete <br />
-    specialty "name" <br />
-    <br />
+    Confirm the delete specialty: <br />
+    {{ specialtyName }}
   </div>
   <hr />
-  <button mat-stroked-button>Confirm</button>
-  <button mat-stroked-button>Cancel</button>
+  <div class="button-container">
+    <button mat-stroked-button (click)="deleteOneSpecialty()">Confirm</button>
+    <button mat-stroked-button (click)="cancel()">Cancel</button>
+  </div>
 </main>

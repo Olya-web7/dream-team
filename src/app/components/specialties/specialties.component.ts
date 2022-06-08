@@ -31,6 +31,10 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
   constructor(private specialtiesService: SpecialtiesService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.fetchData();
+  }
+
+  fetchData(){
     this.subscription.add(this.specialtiesService.getSpecialties().subscribe((data:any)=> {
       this.paginatorLength = this.specialties.length;
       this.dataSource = new MatTableDataSource<Element>(data);
@@ -39,8 +43,16 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
     }))
   }
 
-  openDialog(){
-    this.dialog.open(ConfirmDeleteComponent);
+  openDialog(id:string, name:string){
+    this.specialtiesService.specialtyId = id;
+    this.specialtiesService.specialtyName = name;
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent);
+    this.subscription.add(dialogRef.afterClosed().subscribe(data =>{
+    if (data !== undefined){
+      this.fetchData();
+    }
+  }))
+    
   }
  
   ngOnDestroy(): void {

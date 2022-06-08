@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 export class SpecialtiesService {
 
   url: string = 'https://dtapi.if.ua/api/';
+  specialtyId: string = '';
+  specialtyName: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +16,7 @@ export class SpecialtiesService {
     return this.http.get(this.url + "Speciality/getRecords");
   }
 
-  deleteOne(id:number){
+  deleteOne(id:string){
     return this.http.delete(`${this.url}Speciality/del/${id}`);
   }
 }

@@ -1,10 +1,40 @@
-.main {
-    flex-direction: column;    
+@mixin flex {
     display: flex;
     justify-content: space-between;
+}
+
+
+.main {
+
+    h1 {
+        font-weight: bold;
+    }
+
+    padding: 10px;
+    text-align: center;
+
+    @include flex();
+    flex-direction: column;    
+   
 
     div {
-    display: flex;
-    justify-content: space-between;
+        @include flex();
+
+    padding: 10px;
     }
+
+    .button-container {
+        @include flex();
+        flex-direction: row;  
+
+    button{
+        margin: 1%;
+        width: 50%;
+    }
+    }
+}
+
+
+.mat-icon.high-priority {
+        color: red;
 }
