@@ -5,8 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
-// import {MatPaginatorModule} from '@angular/material/paginator';
 // import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatToolbarModule,
@@ -26,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
+    MatPaginatorModule,
   ],
 })
 export class MaterialModule {}

@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { filter, Subject, takeUntil } from 'rxjs';
-// import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-subjects',
@@ -13,12 +13,13 @@ import { filter, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./subjects.component.scss'],
 })
 export class SubjectsComponent implements AfterViewInit {
-  @ViewChild(MatSort) sort!: MatSort;
-
   displayedColumns: string[] = ['subject_id', 'subject_name', 'subject_description', 'action'];
-  subjects!: SubjectModel[];
   dataSource!: MatTableDataSource<SubjectModel>;
+  subjects!: SubjectModel[];
   destroy$: Subject<boolean> = new Subject<boolean>();
+  
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private subjectsService: SubjectsService, private _liveAnnouncer: LiveAnnouncer) {
     this.dataSource = new MatTableDataSource(this.subjects);
@@ -37,6 +38,7 @@ export class SubjectsComponent implements AfterViewInit {
       });
     // this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
    /** Announce the change in sort state for assistive technology. */
