@@ -4,6 +4,7 @@ import { SpecialtiesComponent } from '../components/specialties/specialties.comp
 import { SubjectsComponent } from '../components/subjects/subjects.component';
 import { HomePageComponent } from '../pages/home-page/home-page.component';
 import { FacultiesComponent } from "../components/faculties/faculties.component";
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
       { path: 'faculties', component: FacultiesComponent },
       { path: 'subjects', component: SubjectsComponent },
       { path: 'speciality', component: SpecialtiesComponent},
+      { path: '', component: DashboardComponent},
     ]},
 ];
 
