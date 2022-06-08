@@ -2,17 +2,20 @@
   <mat-toolbar-row>
     <span class="logo" [routerLink]="['/']">Tester app</span>
     <mat-list>
-      <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <a [routerLink]="['/']">Home</a>
+      <mat-list-item
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="['/home']">Home</a>
       </mat-list-item>
       <mat-list-item routerLinkActive="active">
-        <a [routerLink]="['/faculties']">Faculties</a>
+        <a [routerLink]="['faculties']">Faculties</a>
       </mat-list-item>
       <mat-list-item routerLinkActive="active">
-        <a [routerLink]="['/speciality']">Specialities</a>
+        <a [routerLink]="['speciality']">Specialities</a>
       </mat-list-item>
       <mat-list-item routerLinkActive="active">
-        <a [routerLink]="['/subjects']">Subjects</a>
+        <a [routerLink]="['subjects']">Subjects</a>
       </mat-list-item>
     </mat-list>
     <button

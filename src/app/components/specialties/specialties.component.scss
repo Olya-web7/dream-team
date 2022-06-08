@@ -1,9 +1,12 @@
 .mat-toolbar-row, .mat-toolbar-single-row{
+
+    background-color: transparent;
+
     display: flex;
     justify-content: space-between;
     padding: 0 10%;
 
-    h3 {
+    h2 {
         font-weight: bold;
     }
 }
