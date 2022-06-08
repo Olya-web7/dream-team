@@ -6,6 +6,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { NewSpecialtieComponent } from './new-specialtie/new-specialtie.component';
 
 @Component({
   selector: 'app-specialties',
@@ -28,7 +29,7 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
 
   pageEvent:PageTransitionEvent | any;
 
-  constructor(private specialtiesService: SpecialtiesService, public dialog: MatDialog) { }
+  constructor(private specialtiesService: SpecialtiesService, public dialog: MatDialog, public dialogNewSpecialty: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchData();
@@ -46,13 +47,25 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
   openDialog(id:string, name:string){
     this.specialtiesService.specialtyId = id;
     this.specialtiesService.specialtyName = name;
-    const dialogRef = this.dialog.open(ConfirmDeleteComponent);
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+      width: '20%'
+    });
     this.subscription.add(dialogRef.afterClosed().subscribe(data =>{
     if (data !== undefined){
       this.fetchData();
     }
   }))
-    
+  }
+
+  openNewSpecialtyDialog(){
+    const dialogRef = this.dialogNewSpecialty.open(NewSpecialtieComponent, {
+      width: '40%'
+    });
+    this.subscription.add(dialogRef.afterClosed().subscribe(data => {
+      if (data !== undefined) {
+        this.fetchData();
+      }
+    }))
   }
  
   ngOnDestroy(): void {

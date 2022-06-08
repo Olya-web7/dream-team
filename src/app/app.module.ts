@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    ReactiveFormsModule
   ],
   providers: [
     SpecialtiesService, 
