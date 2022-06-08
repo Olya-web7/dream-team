@@ -6,6 +6,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { filter, Subject, takeUntil } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-subjects',
@@ -13,16 +14,25 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./subjects.component.scss'],
 })
 export class SubjectsComponent implements AfterViewInit, OnDestroy {
-  displayedColumns: string[] = ['subject_id', 'subject_name', 'subject_description', 'action'];
+  displayedColumns: string[] = [
+    'subject_id',
+    'subject_name',
+    'subject_description',
+    'action',
+  ];
   dataSource!: MatTableDataSource<SubjectModel>;
   subjects!: SubjectModel[];
   destroy$: Subject<boolean> = new Subject<boolean>();
-  resultsLength = 0;
+  paginatorLength: number = 0;
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private subjectsService: SubjectsService, private _liveAnnouncer: LiveAnnouncer) {
+  constructor(
+    private subjectsService: SubjectsService,
+    private _liveAnnouncer: LiveAnnouncer,
+    public dialog: MatDialog
+  ) {
     this.dataSource = new MatTableDataSource(this.subjects);
   }
 
@@ -36,12 +46,14 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
       .subscribe((subjects) => {
         this.dataSource = new MatTableDataSource(subjects);
         this.subjects = subjects;
+        this.paginatorLength = this.subjects.length;
+        this.dataSource.paginator = this.paginator;
       });
     this.dataSource.paginator = this.paginator;
   }
 
-   /** Announce the change in sort state for assistive technology. */
-   announceSortChange(sortState: Sort): void {    
+  /** Announce the change in sort state for assistive technology. */
+  announceSortChange(sortState: Sort): void {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
