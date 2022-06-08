@@ -1,5 +1,6 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,6 @@ export class FacultiesService {
   }
 
   getFaculties() {
-    return this.http.get<any[]>('https://dtapi.if.ua/api/Faculty/getRecords');
+    return this.http.get<any[]>(`${environment.apiUrl}/Faculty/getRecords`);
   }
 }
