@@ -11,11 +11,19 @@ export class FacultiesService {
   constructor(private http: HttpClient) {
   }
 
-  getFaculties() {
+  public getFaculties() {
     return this.http.get<Faculty[]>(`${environment.apiUrl}/Faculty/getRecords`);
   }
 
-  addFaculty(body: Faculty) {
+  public addFaculty(body: Faculty) {
     return this.http.post(`${environment.apiUrl}/Faculty/insertData`, body);
+  }
+
+  public updateFaculty(id: string, body: Faculty) {
+    return this.http.post(`${environment.apiUrl}/Faculty/update/${id}`, body);
+  }
+
+  public delFaculty(id: string) {
+    return this.http.delete(`${environment.apiUrl}/Faculty/del/${id}`);
   }
 }

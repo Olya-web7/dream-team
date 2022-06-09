@@ -10,7 +10,7 @@ import { NewSpecialtieComponent } from './components/specialties/new-specialtie/
 import { SpecialtiesService } from './services/specialties.service';
 import { ConfirmDeleteComponent } from './components/specialties/confirm-delete/confirm-delete.component';
 import { FacultiesComponent } from './components/faculties/faculties.component';
-import { NewFacultyComponent } from './components/faculties/new-faculty/new-faculty.component';
+import { NewEditFacultyComponent } from './components/faculties/new-edit-faculty/new-edit-faculty.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NewSubjectComponent } from './components/subjects/new-subject/new-subject.component';
 import { SubjectsComponent } from './components/subjects/subjects.component';
@@ -20,6 +20,7 @@ import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ConfirmFacultyDeleteComponent } from './components/faculties/confirm-faculty-delete/confirm-faculty-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +28,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SpecialtiesComponent,
     NewSpecialtieComponent,
     FacultiesComponent,
-    NewFacultyComponent,
+    NewEditFacultyComponent,
     HomePageComponent,
     SubjectsComponent,
     NewSubjectComponent,
     HeaderComponent,
     ConfirmDeleteComponent,
     BreadcrumbComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConfirmFacultyDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="dialog-wrapper">
-  <h3 mat-dialog-title class="dialog-title">Add new</h3>
+  <h3 mat-dialog-title class="dialog-title">{{data.isNew ? 'Add new' : 'Edit'}}</h3>
   <div mat-dialog-content>
     <form class="form" [formGroup]="addFacultyForm">
       <mat-form-field class="example-full-width" appearance="fill">
@@ -14,7 +14,19 @@
     </form>
   </div>
   <div class="actions">
-    <button mat-stroked-button mat-dialog-close="true" (click)="addNew()">Submit</button>
-    <button mat-stroked-button mat-dialog-close="true">Cancel</button>
+    <button
+      mat-raised-button
+      mat-dialog-close="true"
+      (click)="edit(data.isNew)"
+      [disabled]="addFacultyForm.invalid"
+      color="primary">
+      Submit
+    </button>
+    <button
+      mat-raised-button
+      mat-dialog-close="true"
+      color="warn">
+      Cancel
+    </button>
   </div>
 </div>

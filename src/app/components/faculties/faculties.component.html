@@ -1,6 +1,6 @@
 <mat-toolbar class="toolbar">
   <h2>Faculties</h2>
-  <button mat-raised-button (click)="openDialog()">+ New faculty</button>
+  <button mat-raised-button (click)="openNewEditDialog(true)">+ New faculty</button>
 </mat-toolbar>
 <div class="mat-elevation-z8" [hidden]="!faculties">
   <table mat-table [dataSource]="faculties" class="mat-elevation-z8">
@@ -25,13 +25,15 @@
         <mat-icon
           class="edit-icon"
           aria-hidden="false"
-          aria-label="edit faculty icon">
+          aria-label="edit faculty icon"
+          (click)="openNewEditDialog(false, row.faculty_id, row.faculty_name, row.faculty_description)">
           edit
         </mat-icon>
         <mat-icon
           class="delete-icon"
           aria-hidden="false"
-          aria-label="delete faculty icon">
+          aria-label="delete faculty icon"
+          (click)="openDeleteDialog(row.faculty_id, row.faculty_name)">
           delete
         </mat-icon>
       </td>
