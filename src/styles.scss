@@ -22,8 +22,8 @@ table.mat-table {
   width: 100%;
 }
 
-.delete-faculty{
-  .mat-dialog-content{
+.delete-faculty {
+  .mat-dialog-content {
     text-align: center;
     padding: 0 22px 22px;
   }
@@ -72,5 +72,13 @@ table.mat-table {
 
   &:hover.edit-icon {
     color: orange;
+  }
+}
+
+@media screen and(max-width: 500px) {
+  table {
+    .mat-row {
+      height: 88px !important;
+    }
   }
 }
