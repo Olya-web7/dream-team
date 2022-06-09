@@ -1,1 +1,20 @@
-<p>new-faculty works!</p>
+<div class="dialog-wrapper">
+  <h3 mat-dialog-title class="dialog-title">Add new</h3>
+  <div mat-dialog-content>
+    <form class="form" [formGroup]="addFacultyForm">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="faculty_name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="faculty_description"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="actions">
+    <button mat-stroked-button mat-dialog-close="true" (click)="addNew()">Submit</button>
+    <button mat-stroked-button mat-dialog-close="true">Cancel</button>
+  </div>
+</div>

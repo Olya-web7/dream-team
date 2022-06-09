@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewSubjectComponent,
     HeaderComponent,
     ConfirmDeleteComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +42,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    BreadcrumbModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    BreadcrumbModule
   ],
   providers: [
-    SpecialtiesService, 
+    SpecialtiesService,
     BreadcrumbService
   ],
   bootstrap: [AppComponent],
