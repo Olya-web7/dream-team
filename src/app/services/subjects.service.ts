@@ -8,7 +8,11 @@ import { environment } from '../../environments/environment';
 })
 export class SubjectsService {
   subjectId: string = '';
+  subjectCode: string = '';
   subjectName: string = '';
+
+  subjectIdDel: string = '';
+  subjectNameDel: string = '';
 
   constructor(private http: HttpClient) {}
 
@@ -17,12 +21,22 @@ export class SubjectsService {
       `${environment.apiUrl}/Subject/getRecords`
     );
   }
-  
-  addSubject(id: string) {
-    return this.http.delete(`${environment.apiUrl}/Subject/add/${id}`);
+
+  addSubject(newSubject: SubjectModel) {
+    return this.http.post(
+      `${environment.apiUrl}/Subject/insertData`,
+      JSON.stringify(newSubject)
+    );
   }
 
   deleteSubject(id: string) {
     return this.http.delete(`${environment.apiUrl}/Subject/del/${id}`);
+  }
+
+  editSubject(id: string, editSubject: SubjectModel) {
+    return this.http.post(
+      `${environment.apiUrl}/Subject/update/${id}`,
+      JSON.stringify(editSubject)
+    );
   }
 }

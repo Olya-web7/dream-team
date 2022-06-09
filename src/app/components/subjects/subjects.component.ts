@@ -52,8 +52,10 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteSubject(subject_id: string) {
-    this.subjectsService.deleteSubject(subject_id);
+  deleteSubject(id:string, name:string) {
+    this.subjectsService.subjectIdDel = id;
+    this.subjectsService.subjectNameDel = name;
+    
   }
 
   ngOnDestroy(): void {
@@ -61,3 +63,4 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 }
+
