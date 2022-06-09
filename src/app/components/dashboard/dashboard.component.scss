@@ -1,6 +1,7 @@
 .cards_container {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: 767px) {
     flex-direction: column;
@@ -34,7 +35,7 @@
 .count {
   font-size: 24px;
   text-align: center;
-  margin-left: 90px;
+  margin-left: 100px;
 }
 
 .mat-card-actions {
