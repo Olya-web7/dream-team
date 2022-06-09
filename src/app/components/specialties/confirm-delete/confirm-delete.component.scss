@@ -16,8 +16,8 @@ $value10px: 10px;
     text-align: center;
 
     @include flex();
-    flex-direction: column;    
-   
+    flex-direction: column;
+
 
     div {
         @include flex();
@@ -26,8 +26,8 @@ $value10px: 10px;
 
     .button-container {
         @include flex();
-        flex-direction: row;  
-        
+        flex-direction: row;
+
         button {
             margin: 1%;
             width: 50%;
@@ -36,9 +36,4 @@ $value10px: 10px;
     .mat-dialog-content {
         margin: auto;
     }
-}
-
-
-.mat-icon.high-priority {
-        color: red;
 }
