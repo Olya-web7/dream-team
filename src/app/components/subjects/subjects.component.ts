@@ -8,6 +8,7 @@ import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmSubjectDeleteComponent } from './confirm-subject-delete/confirm-subject-delete.component';
+import { NewSubjectComponent } from './new-subject/new-subject.component';
 
 @Component({
   selector: 'app-subjects',
@@ -32,7 +33,8 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     private subjectsService: SubjectsService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public dialogNewSubject: MatDialog,
   ) {
     this.dataSource = new MatTableDataSource(this.subjects);
   }
@@ -64,6 +66,21 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
         this.subjectsService.getSubjects()
       }
     }))    
+  }  
+
+  openDialog() {
+    const dialogRef = this.dialogNewSubject.open(NewSubjectComponent, {
+      width: '40%',
+    });
+    this.subscription.add(
+      dialogRef.afterClosed().subscribe(() => {
+        this.subjectsService.getSubjects()
+      })
+    );
+  }
+
+  openNewSubjectDialog() {
+    this.openDialog();
   }
 
   ngOnDestroy(): void {

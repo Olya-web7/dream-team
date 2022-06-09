@@ -1,6 +1,6 @@
 <div class="toolbar">
   <h2>Subjects</h2>
-  <button mat-raised-button>+ New subject</button>
+  <button mat-raised-button (click)="openNewSubjectDialog()">+ New subject</button>
 </div>
 <div class="mat-elevation-z8" [hidden]="!dataSource">
   <table mat-table [dataSource]="dataSource">

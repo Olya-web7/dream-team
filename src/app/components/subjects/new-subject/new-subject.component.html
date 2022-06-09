@@ -1,1 +1,53 @@
-<p>new-subject works!</p>
+<main class="main">
+  <h1 mat-dialog-title>Add a new specialty</h1>
+  <form [formGroup]="newSubjectForm" (ngSubmit)="onSubmit()">
+    <mat-form-field [style.width.%]="100">
+      <mat-label>Subject name</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        id="nameInput"
+        name="nameInput"
+        formControlName="nameInput"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        !newSubjectForm?.get('nameInput')?.valid &&
+        newSubjectForm?.get('nameInput')?.touched
+      "
+      >This field is required</mat-error
+    >
+    <mat-form-field [style.width.%]="100">
+      <mat-label>Subject description</mat-label>
+      <input
+        type="text"
+        matInput
+        required
+        id="descriptionInput"
+        name="descriptionInput"
+        formControlName="descriptionInput"
+      />
+    </mat-form-field>
+    <mat-error
+      *ngIf="
+        !newSubjectForm?.get('descriptionInput')?.valid &&
+        newSubjectForm?.get('descriptionInput')?.touched
+      "
+    >
+      {{ getErrors() }}
+    </mat-error>
+
+    <div class="button-container">
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!newSubjectForm.valid"
+      >
+        Confirm
+      </button>
+      <button mat-raised-button (click)="cancel()" type="button">Cancel</button>
+    </div>
+  </form>
+</main>

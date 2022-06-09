@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class SubjectsService {
   subjectId: string = '';
-  subjectCode: string = '';
+  subjectDescription: string = '';
   subjectName: string = '';
 
   subjectIdDel: string = '';
