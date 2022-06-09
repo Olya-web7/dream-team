@@ -6,6 +6,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { NewSpecialtieComponent } from './new-specialtie/new-specialtie.component';
 
 @Component({
   selector: 'app-specialties',
@@ -28,7 +29,7 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
 
   pageEvent:PageTransitionEvent | any;
 
-  constructor(private specialtiesService: SpecialtiesService, public dialog: MatDialog) { }
+  constructor(private specialtiesService: SpecialtiesService, public dialog: MatDialog, public dialogNewSpecialty: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchData();
@@ -43,16 +44,39 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
     }))
   }
 
+  // confirm delete
   openDialog(id:string, name:string){
-    this.specialtiesService.specialtyId = id;
-    this.specialtiesService.specialtyName = name;
-    const dialogRef = this.dialog.open(ConfirmDeleteComponent);
+    this.specialtiesService.specialtyIdDel = id;
+    this.specialtiesService.specialtyNameDel = name;
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
+      width: '40%'
+    });
     this.subscription.add(dialogRef.afterClosed().subscribe(data =>{
     if (data !== undefined){
       this.fetchData();
     }
   }))
-    
+  }
+
+  // new or edit
+  openDialog2(){
+    const dialogRef = this.dialogNewSpecialty.open(NewSpecialtieComponent, {
+      width: '40%'
+    });
+    this.subscription.add(dialogRef.afterClosed().subscribe(data => {
+        this.fetchData();
+    }))
+  }
+
+  openNewSpecialtyDialog(){
+    this.openDialog2();
+  }
+
+  openEditSpecialtyDialog(id:string, code:string, name:string) {
+    this.specialtiesService.specialtyId = id;
+    this.specialtiesService.specialtyCode = code;
+    this.specialtiesService.specialtyName = name;
+    this.openDialog2();
   }
  
   ngOnDestroy(): void {

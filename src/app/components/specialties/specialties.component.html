@@ -1,7 +1,7 @@
 <section>
   <mat-toolbar class="header-toolbar">
     <h2 class="title">Specialties</h2>
-    <button mat-raised-button>
+    <button mat-raised-button (click)="openNewSpecialtyDialog()">
       <mat-icon aria-hidden="false" aria-label="add new specialties icon"
         >add</mat-icon
       >
@@ -27,6 +27,13 @@
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let specialties">
         <mat-icon
+          (click)="
+            openEditSpecialtyDialog(
+              specialties.speciality_id,
+              specialties.speciality_code,
+              specialties.speciality_name
+            )
+          "
           class="edit-icon"
           aria-hidden="false"
           aria-label="edit specialty icon"

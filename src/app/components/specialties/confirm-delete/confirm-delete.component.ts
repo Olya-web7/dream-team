@@ -18,8 +18,8 @@ export class ConfirmDeleteComponent implements OnInit, OnDestroy {
   constructor(private specialtiesService: SpecialtiesService, public dialogRef: MatDialogRef<ConfirmDeleteComponent>) { }
 
   ngOnInit(): void {
-    this.specialtyId = this.specialtiesService.specialtyId;
-    this.specialtyName = this.specialtiesService.specialtyName;
+    this.specialtyId = this.specialtiesService.specialtyIdDel;
+    this.specialtyName = this.specialtiesService.specialtyNameDel;
   }
 
   deleteOneSpecialty(){
