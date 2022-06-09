@@ -4,9 +4,10 @@ import { SubjectModel } from '../../interfaces/subject.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { filter, Subject, takeUntil } from 'rxjs';
+import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmSubjectDeleteComponent } from './confirm-subject-delete/confirm-subject-delete.component';
 
 @Component({
   selector: 'app-subjects',
@@ -24,13 +25,13 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
   subjects!: SubjectModel[];
   destroy$: Subject<boolean> = new Subject<boolean>();
   paginatorLength: number = 0;
+  subscription: Subscription = new Subscription();
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     private subjectsService: SubjectsService,
-    private _liveAnnouncer: LiveAnnouncer,
     public dialog: MatDialog
   ) {
     this.dataSource = new MatTableDataSource(this.subjects);
@@ -55,7 +56,14 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
   deleteSubject(id:string, name:string) {
     this.subjectsService.subjectIdDel = id;
     this.subjectsService.subjectNameDel = name;
-    
+    const dialogRef = this.dialog.open(ConfirmSubjectDeleteComponent, {
+      width: '40%'
+    });
+    this.subscription.add(dialogRef.afterClosed().subscribe(data =>{
+      if (data !== undefined){
+        this.subjectsService.getSubjects()
+      }
+    }))
   }
 
   ngOnDestroy(): void {
