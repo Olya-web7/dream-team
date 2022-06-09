@@ -44,9 +44,10 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
     }))
   }
 
+  // confirm delete
   openDialog(id:string, name:string){
-    this.specialtiesService.specialtyId = id;
-    this.specialtiesService.specialtyName = name;
+    this.specialtiesService.specialtyIdDel = id;
+    this.specialtiesService.specialtyNameDel = name;
     const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
       width: '40%'
     });
@@ -57,6 +58,7 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
   }))
   }
 
+  // new or edit
   openDialog2(){
     const dialogRef = this.dialogNewSpecialty.open(NewSpecialtieComponent, {
       width: '40%'

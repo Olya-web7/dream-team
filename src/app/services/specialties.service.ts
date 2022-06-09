@@ -12,6 +12,9 @@ export class SpecialtiesService {
   specialtyCode: string = '';
   specialtyName: string = '';
 
+  specialtyIdDel: string = '';
+  specialtyNameDel: string = '';
+
   constructor(private http: HttpClient) { }
 
   getSpecialties(){
