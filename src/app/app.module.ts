@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     NewSubjectComponent,
     HeaderComponent,
     ConfirmDeleteComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -50,5 +52,4 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
