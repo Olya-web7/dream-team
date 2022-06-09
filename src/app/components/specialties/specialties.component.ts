@@ -48,7 +48,7 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
     this.specialtiesService.specialtyId = id;
     this.specialtiesService.specialtyName = name;
     const dialogRef = this.dialog.open(ConfirmDeleteComponent, {
-      width: '20%'
+      width: '40%'
     });
     this.subscription.add(dialogRef.afterClosed().subscribe(data =>{
     if (data !== undefined){
@@ -57,15 +57,24 @@ export class SpecialtiesComponent implements OnInit, OnDestroy {
   }))
   }
 
-  openNewSpecialtyDialog(){
+  openDialog2(){
     const dialogRef = this.dialogNewSpecialty.open(NewSpecialtieComponent, {
       width: '40%'
     });
     this.subscription.add(dialogRef.afterClosed().subscribe(data => {
-      if (data !== undefined) {
         this.fetchData();
-      }
     }))
+  }
+
+  openNewSpecialtyDialog(){
+    this.openDialog2();
+  }
+
+  openEditSpecialtyDialog(id:string, code:string, name:string) {
+    this.specialtiesService.specialtyId = id;
+    this.specialtiesService.specialtyCode = code;
+    this.specialtiesService.specialtyName = name;
+    this.openDialog2();
   }
  
   ngOnDestroy(): void {

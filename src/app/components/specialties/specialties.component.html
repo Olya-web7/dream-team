@@ -27,6 +27,13 @@
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let specialties">
         <mat-icon
+          (click)="
+            openEditSpecialtyDialog(
+              specialties.speciality_id,
+              specialties.speciality_code,
+              specialties.speciality_name
+            )
+          "
           class="edit-icon"
           aria-hidden="false"
           aria-label="edit specialty icon"

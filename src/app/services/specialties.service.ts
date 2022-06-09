@@ -9,6 +9,7 @@ import { Specialty } from '../interfaces/specialty.model';
 export class SpecialtiesService {
 
   specialtyId: string = '';
+  specialtyCode: string = '';
   specialtyName: string = '';
 
   constructor(private http: HttpClient) { }
@@ -22,6 +23,10 @@ export class SpecialtiesService {
   }
 
   addOne(newSpecialty:Specialty){
-    return this.http.post(`${environment.apiUrl}/Speciality/insertData`, newSpecialty);
+    return this.http.post(`${environment.apiUrl}/Speciality/insertData`, JSON.stringify(newSpecialty));
+  }
+
+  editOne(id:string, editSpecialty:Specialty){
+    return this.http.post(`${environment.apiUrl}/Speciality/update/${id}`, JSON.stringify(editSpecialty));
   }
 }

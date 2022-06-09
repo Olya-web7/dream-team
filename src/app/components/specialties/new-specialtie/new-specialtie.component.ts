@@ -16,6 +16,10 @@ export class NewSpecialtieComponent implements OnInit, OnDestroy {
 
   newSpecialtyForm: FormGroup;
 
+  specialtyId: string = '';
+  specialtyCode: string = '';
+  specialtyName: string = '';
+
   constructor(public dialogRef: MatDialogRef<NewSpecialtieComponent>, private specialtiesService: SpecialtiesService) { }
 
   ngOnInit(): void {
@@ -23,6 +27,18 @@ export class NewSpecialtieComponent implements OnInit, OnDestroy {
       'codeInput': new FormControl(null, [Validators.required, Validators.maxLength(5)]),
       'nameInput': new FormControl(null, Validators.required)
     })
+
+    // get data form service, when edit:
+    this.specialtyId = this.specialtiesService.specialtyId;
+    this.specialtyCode = this.specialtiesService.specialtyCode;
+    this.specialtyName = this.specialtiesService.specialtyName;
+
+    if (this.specialtyId) {
+      this.newSpecialtyForm.setValue({
+        'codeInput': this.specialtyCode,
+        'nameInput': this.specialtyName
+      })
+    }
   }
 
 
@@ -35,6 +51,7 @@ export class NewSpecialtieComponent implements OnInit, OnDestroy {
   }
 
   cancel(){
+    this.resetValues();
     this.dialogRef.close();
   }
 
@@ -43,10 +60,23 @@ export class NewSpecialtieComponent implements OnInit, OnDestroy {
       speciality_code: this.newSpecialtyForm.get('codeInput')?.value,
       speciality_name: this.newSpecialtyForm.get('nameInput')?.value
     }
-    this.subscription.add(this.specialtiesService.addOne(newSpecialty).subscribe((response:any) => {
-      console.log(response);
-    }));;
+    if (this.specialtyId) {
+      this.subscription.add(this.specialtiesService.editOne(this.specialtyId, newSpecialty).subscribe((response:any) => {
+        console.log(response);
+      }));;
+    } else {
+      this.subscription.add(this.specialtiesService.addOne(newSpecialty).subscribe((response:any) => {
+        console.log(response);
+      }));;
+    }
+    this.resetValues();
     this.dialogRef.close();
+  }
+
+  resetValues() {
+    this.specialtiesService.specialtyId = '';
+    this.specialtyId = '';
+    this.newSpecialtyForm.reset();
   }
 
   ngOnDestroy(): void {
