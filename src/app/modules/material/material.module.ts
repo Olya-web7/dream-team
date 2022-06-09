@@ -7,7 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
+import { MatInputModule } from "@angular/material/input";
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -20,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatInputModule,
     MatCardModule,
   ],
   exports: [
@@ -31,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatInputModule,
     MatCardModule,
   ],
 })

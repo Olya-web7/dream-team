@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
@@ -41,10 +42,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     BreadcrumbModule
   ],
   providers: [
-    SpecialtiesService, 
+    SpecialtiesService,
     BreadcrumbService
   ],
   bootstrap: [AppComponent],
