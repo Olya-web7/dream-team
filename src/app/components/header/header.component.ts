@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  constructor() { }
+  public toggled: boolean = false;
+
+  constructor() {
+  }
+
+  public toggleMenu(): void {
+    this.toggled = !this.toggled;
+  }
 
 }

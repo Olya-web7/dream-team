@@ -34,3 +34,30 @@ mat-toolbar {
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  mat-toolbar {
+    mat-toolbar-row {
+      mat-list {
+        position: absolute;
+        top: -250px;
+        background-color: #7d3fb5;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        transition: .4s;
+        z-index: 3;
+
+        &.toggled {
+          top: 9px;
+          padding-left: 70px;
+        }
+      }
+
+      .menu-icon {
+        display: block;
+        z-index: 3;
+      }
+    }
+  }
+}
