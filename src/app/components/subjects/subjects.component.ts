@@ -2,8 +2,7 @@ import { AfterViewInit, Component, OnDestroy, ViewChild } from '@angular/core';
 import { SubjectsService } from 'src/app/services/subjects.service';
 import { SubjectModel } from '../../interfaces/subject.model';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort, Sort } from '@angular/material/sort';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatSort } from '@angular/material/sort';
 import { filter, Subject, Subscription, takeUntil } from 'rxjs';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
@@ -80,6 +79,13 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
   }
 
   openNewSubjectDialog() {
+    this.openDialog();
+  }
+
+  openEditSpecialtyDialog(id: string, description: string, name: string) {
+    this.subjectsService.subjectId = id;
+    this.subjectsService.subjectDescription = description;
+    this.subjectsService.subjectName = name;
     this.openDialog();
   }
 
