@@ -21,6 +21,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ConfirmFacultyDeleteComponent } from './components/faculties/confirm-faculty-delete/confirm-faculty-delete.component';
+import { ConfirmSubjectDeleteComponent } from './components/subjects/confirm-subject-delete/confirm-subject-delete.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ConfirmFacultyDeleteComponent } from './components/faculties/confirm-fa
     ConfirmDeleteComponent,
     BreadcrumbComponent,
     DashboardComponent,
-    ConfirmFacultyDeleteComponent
+    ConfirmFacultyDeleteComponent,
+    ConfirmSubjectDeleteComponent
   ],
   imports: [
     BrowserModule,
