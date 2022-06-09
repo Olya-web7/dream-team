@@ -63,7 +63,7 @@ export class SubjectsComponent implements AfterViewInit, OnDestroy {
       if (data !== undefined){
         this.subjectsService.getSubjects()
       }
-    }))
+    }))    
   }
 
   ngOnDestroy(): void {
