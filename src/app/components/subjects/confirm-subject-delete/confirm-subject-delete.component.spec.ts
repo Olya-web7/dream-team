@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { ConfirmSubjectDeleteComponent } from './confirm-subject-delete.component';
 
@@ -8,7 +10,14 @@ describe('ConfirmSubjectDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConfirmSubjectDeleteComponent ]
+      declarations: [ ConfirmSubjectDeleteComponent ], 
+      imports: [HttpClientModule, MatDialogModule], 
+      providers: [
+        {
+          provide: MatDialogRef, 
+          useValue: {}
+        }
+      ]
     })
     .compileComponents();
   });
