@@ -10,9 +10,14 @@
     "lint": "ng lint",
     "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,css,html}\""
   },
+  "lint-staged": {
+    "src/**/*.{ts,css,html}" :  [
+      "npm run prettier:check"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier:check"
+      "pre-commit": "lint-staged"
     }
   },
   "private": true,
