@@ -10,7 +10,6 @@ export class SubjectsService {
   subjectId: string = '';
   subjectDescription: string = '';
   subjectName: string = '';
-
   subjectIdDel: string = '';
   subjectNameDel: string = '';
 
