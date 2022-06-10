@@ -24,9 +24,7 @@ export class SubjectsService {
 
   addSubject(newSubject: SubjectModel) {
     return this.http.post(
-      `${environment.apiUrl}/Subject/insertData`,
-      JSON.stringify(newSubject)
-    );
+      `${environment.apiUrl}/Subject/insertData`, newSubject);
   }
 
   deleteSubject(id: string) {
@@ -35,8 +33,6 @@ export class SubjectsService {
 
   editSubject(id: string, editSubject: SubjectModel) {
     return this.http.post(
-      `${environment.apiUrl}/Subject/update/${id}`,
-      JSON.stringify(editSubject)
-    );
+      `${environment.apiUrl}/Subject/update/${id}`, editSubject);
   }
 }
