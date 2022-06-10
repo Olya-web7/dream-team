@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 
 import { SubjectsComponent } from './subjects.component';
 
@@ -8,7 +10,14 @@ describe('SubjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubjectsComponent ]
+      declarations: [ SubjectsComponent ], 
+      imports: [HttpClientModule, MatDialogModule], 
+      providers: [
+        {
+          provide: MatDialogRef, 
+          useValue: {}
+        }
+      ]
     })
     .compileComponents();
   });
