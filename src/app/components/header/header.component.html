@@ -1,11 +1,10 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <span class="logo" [routerLink]="['/home']">Tester app</span>
-    <mat-list>
+    <mat-list [class.toggled]="toggled" (click)="toggleMenu()">
       <mat-list-item
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
+        [routerLinkActiveOptions]="{ exact: true }">
         <a [routerLink]="['/home']">Home</a>
       </mat-list-item>
       <mat-list-item routerLinkActive="active">
@@ -22,7 +21,7 @@
       mat-icon-button
       class="menu-icon"
       aria-label="Example icon-button with menu icon"
-    >
+      (click)="toggleMenu()">
       <mat-icon>menu</mat-icon>
     </button>
   </mat-toolbar-row>

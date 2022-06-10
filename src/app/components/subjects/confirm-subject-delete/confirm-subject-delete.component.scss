@@ -1,0 +1,36 @@
+$value10px: 10px;
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  h1 {
+    font-weight: bold;
+  }
+
+  padding: $value10px;
+  text-align: center;
+
+  @include flex();
+  flex-direction: column;
+
+  div {
+    @include flex();
+    padding: $value10px;
+  }
+
+  .button-container {
+    @include flex();
+    flex-direction: row;
+
+    button {
+      margin: 1%;
+      width: 50%;
+    }
+  }
+  .mat-dialog-content {
+    margin: auto;
+  }
+}
