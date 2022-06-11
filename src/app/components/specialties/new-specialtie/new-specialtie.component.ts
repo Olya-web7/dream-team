@@ -67,7 +67,7 @@ export class NewSpecialtieComponent implements OnInit, OnDestroy {
     } else {
       this.subscription.add(this.specialtiesService.addOne(newSpecialty).subscribe((response:any) => {
         console.log(response);
-      }));;
+      }));
     }
     this.resetValues();
     this.dialogRef.close();

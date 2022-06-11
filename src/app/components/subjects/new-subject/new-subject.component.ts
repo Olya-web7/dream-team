@@ -17,11 +17,11 @@ export class NewSubjectComponent implements OnInit {
   subjectDescription: string = '';
   subjectName: string = '';
 
-  constructor(public dialogRef: MatDialogRef<NewSubjectComponent>, private subjectsService: SubjectsService) { } 
+  constructor(public dialogRef: MatDialogRef<NewSubjectComponent>, private subjectsService: SubjectsService) { }
 
   ngOnInit(): void {
     this.newSubjectForm = new FormGroup({
-      'descriptionInput': new FormControl(null, [Validators.required, Validators.maxLength(5)]),
+      'descriptionInput': new FormControl(null, [Validators.required, Validators.minLength(3)]),
       'nameInput': new FormControl(null, Validators.required)
     });
 
@@ -56,13 +56,13 @@ export class NewSubjectComponent implements OnInit {
       subject_name: this.newSubjectForm.get('nameInput')?.value
     }
     if (this.subjectId) {
-      this.subscription.add(this.subjectsService.editSubject(this.subjectId, newSubject).subscribe((response:any) => {
+      this.subscription.add(this.subjectsService.editSubject(this.subjectId, newSubject).subscribe((response: any) => {
         console.log(response);
       }));;
     } else {
-      this.subscription.add(this.subjectsService.addSubject(newSubject).subscribe((response:any) => {
+      this.subscription.add(this.subjectsService.addSubject(newSubject).subscribe((response: any) => {
         console.log(response);
-      }));;
+      }));
     }
     this.resetValues();
     this.dialogRef.close();
@@ -72,6 +72,10 @@ export class NewSubjectComponent implements OnInit {
     this.subjectsService.subjectId = '';
     this.subjectId = '';
     this.newSubjectForm.reset();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
