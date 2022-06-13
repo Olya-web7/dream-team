@@ -13,6 +13,7 @@ import { SubjectsService } from 'src/app/services/subjects.service';
 export class NewSubjectComponent implements OnInit {
   subscription: Subscription = new Subscription();
   newSubjectForm: FormGroup;
+
   subjectId: string = '';
   subjectDescription: string = '';
   subjectName: string = '';

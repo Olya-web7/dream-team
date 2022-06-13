@@ -40,7 +40,7 @@ export class SubjectsComponent implements OnInit, OnDestroy {
     this.subscription.add(
       this.subjectsService.getSubjects().subscribe((subjects) => {
         this.paginatorLength = this.subjects.length;
-        this.dataSource = new MatTableDataSource(subjects);
+        this.dataSource = new MatTableDataSource<SubjectModel>(subjects);
         this.dataSource.paginator = this.paginator;
         this.subjects = subjects;
       })

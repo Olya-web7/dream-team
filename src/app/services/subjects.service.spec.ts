@@ -7,12 +7,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 let service: SubjectsService;
 let httpClientSpy: jasmine.SpyObj<HttpClient>;
 
-describe('SpecialtiesService', () => {
+describe('SubjectsService', () => {
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SubjectsService(httpClientSpy);
     TestBed.configureTestingModule({
-        providers: [SubjectsService], 
+        providers: [SubjectsService],
         imports: [HttpClientModule]
     });
   });
@@ -40,7 +40,7 @@ describe('SpecialtiesService', () => {
               .withContext('expected specialties')
               .toEqual(expectedSubjects);
               done();
-          }, 
+          },
           error: done.fail
       });
   });
